@@ -217,7 +217,7 @@
                   "horizontalSpacing": 0,
                   "isMaterialIdentifierEnabled": true,
                   "layerIdentifier": "layer0",
-                  "materialIdentifier": "shader_code_asset_material_model:92385-bef8460f-6f11-4530-9996-8f65863dc0d4",
+                  "materialIdentifier": "shader_code_asset_material_model:94106-bef8460f-6f11-4530-9996-8f65863dc0d4",
                   "outputVisibility": "preview|capture",
                   "physicsEnabled": false,
                   "receiveShadow": false,
@@ -237,7 +237,134 @@
                     "z": 0
                   },
                   "verticalAlignment": "center",
-                  "verticalSpacing": 0
+                  "verticalSpacing": 0,
+                  "children": [
+                    {
+                      "modelName": "text_extrusion_model",
+                      "name": "3dText0",
+                      "identifier": "text_extrusion_model:96698-bef8460f-6f11-4530-9996-8f65863dc0d4",
+                      "animationMask": {
+                        "position": false,
+                        "rotation": false,
+                        "scale": false
+                      },
+                      "cameraVisibility": "back|front",
+                      "castShadow": false,
+                      "depth": 10,
+                      "editable": false,
+                      "fontIdentifier": "local_font_model:96708-bef8460f-6f11-4530-9996-8f65863dc0d4",
+                      "hidden": false,
+                      "isDynamicText": false,
+                      "layerIdentifier": "layer0",
+                      "letterSpacing": 0,
+                      "lineSpacing": 0,
+                      "outputVisibility": "preview|capture",
+                      "physicsEnabled": false,
+                      "receiveShadow": false,
+                      "renderPass": "main_scene",
+                      "tags": [],
+                      "text": "Text",
+                      "transform": {
+                        "rx": 0,
+                        "ry": 0,
+                        "rz": 0,
+                        "sx": 0.00125,
+                        "sy": 0.00125,
+                        "sz": 0.00125,
+                        "x": 0,
+                        "y": 0,
+                        "z": 0
+                      },
+                      "uTexCoordMode": "restart",
+                      "vTexCoordMode": "restart",
+                      "children": [
+                        {
+                          "modelName": "text_extrusion_front_model",
+                          "identifier": "text_extrusion_front_model:96700-bef8460f-6f11-4530-9996-8f65863dc0d4",
+                          "animationMask": {
+                            "position": false,
+                            "rotation": false,
+                            "scale": false
+                          },
+                          "cameraVisibility": "back|front",
+                          "hidden": false,
+                          "isMaterialIdentifierEnabled": true,
+                          "layerIdentifier": "layer0",
+                          "materialIdentifier": "defaultMaterial:96706-bef8460f-6f11-4530-9996-8f65863dc0d4",
+                          "outputVisibility": "preview|capture",
+                          "physicsEnabled": false,
+                          "tags": [],
+                          "transform": {
+                            "rx": 0,
+                            "ry": 0,
+                            "rz": 0,
+                            "sx": 1,
+                            "sy": 1,
+                            "sz": 1,
+                            "x": 0,
+                            "y": 0,
+                            "z": 0
+                          }
+                        },
+                        {
+                          "modelName": "text_extrusion_back_model",
+                          "identifier": "text_extrusion_back_model:96702-bef8460f-6f11-4530-9996-8f65863dc0d4",
+                          "animationMask": {
+                            "position": false,
+                            "rotation": false,
+                            "scale": false
+                          },
+                          "cameraVisibility": "back|front",
+                          "hidden": false,
+                          "isMaterialIdentifierEnabled": true,
+                          "layerIdentifier": "layer0",
+                          "materialIdentifier": "defaultMaterial:96706-bef8460f-6f11-4530-9996-8f65863dc0d4",
+                          "outputVisibility": "preview|capture",
+                          "physicsEnabled": false,
+                          "tags": [],
+                          "transform": {
+                            "rx": 0,
+                            "ry": 0,
+                            "rz": 0,
+                            "sx": 1,
+                            "sy": 1,
+                            "sz": 1,
+                            "x": 0,
+                            "y": 0,
+                            "z": 0
+                          }
+                        },
+                        {
+                          "modelName": "text_extrusion_side_model",
+                          "identifier": "text_extrusion_side_model:96704-bef8460f-6f11-4530-9996-8f65863dc0d4",
+                          "animationMask": {
+                            "position": false,
+                            "rotation": false,
+                            "scale": false
+                          },
+                          "cameraVisibility": "back|front",
+                          "hidden": false,
+                          "isMaterialIdentifierEnabled": true,
+                          "layerIdentifier": "layer0",
+                          "materialIdentifier": "defaultMaterial:96706-bef8460f-6f11-4530-9996-8f65863dc0d4",
+                          "outputVisibility": "preview|capture",
+                          "physicsEnabled": false,
+                          "tags": [],
+                          "transform": {
+                            "rx": 0,
+                            "ry": 0,
+                            "rz": 0,
+                            "sx": 1,
+                            "sy": 1,
+                            "sz": 1,
+                            "x": 0,
+                            "y": 0,
+                            "z": 0
+                          }
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }

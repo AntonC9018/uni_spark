@@ -14,6 +14,16 @@
     "prod": 171
   },
   "visual_programming": {
+    "connections": [
+      {
+        "modelName": "patch_connection_model",
+        "identifier": "patch_connection_model:96915-bef8460f-6f11-4530-9996-8f65863dc0d4",
+        "fromPatch": "script_read_variable_patch_model:96508-bef8460f-6f11-4530-9996-8f65863dc0d4",
+        "fromPort": "script_patch_read_variable_model:96506-bef8460f-6f11-4530-9996-8f65863dc0d4",
+        "toPatch": "consumer_patch_model:96913-bef8460f-6f11-4530-9996-8f65863dc0d4",
+        "toPort": "2"
+      }
+    ],
     "graphs": [
       {
         "modelName": "patch_graph",
@@ -21,7 +31,9 @@
         "subpatches": [
           "consumer_patch_model:102423-c035f80c-754f-4a3a-a4e8-45073f42fb5f",
           "consumer_patch_model:102425-c035f80c-754f-4a3a-a4e8-45073f42fb5f",
-          "template_patch_model:95339-5dc37b3f-9e5d-45fa-8319-0feb7a626a27"
+          "consumer_patch_model:96502-bef8460f-6f11-4530-9996-8f65863dc0d4",
+          "consumer_patch_model:96913-bef8460f-6f11-4530-9996-8f65863dc0d4",
+          "script_read_variable_patch_model:96508-bef8460f-6f11-4530-9996-8f65863dc0d4"
         ]
       }
     ],
@@ -69,14 +81,37 @@
         "variantInfo": "float"
       },
       {
-        "modelName": "template_patch_model",
-        "name": "Switch",
-        "identifier": "template_patch_model:95339-5dc37b3f-9e5d-45fa-8319-0feb7a626a27",
+        "modelName": "consumer_patch_model",
+        "name": "emoji",
+        "identifier": "consumer_patch_model:96502-bef8460f-6f11-4530-9996-8f65863dc0d4",
+        "object": "composed_material_parameter_model:94110-bef8460f-6f11-4530-9996-8f65863dc0d4",
+        "objectProperty": "shader_parameter",
         "position": [
-          956,
-          -100
+          740,
+          -28
+        ]
+      },
+      {
+        "modelName": "consumer_patch_model",
+        "name": "3dText0",
+        "identifier": "consumer_patch_model:96913-bef8460f-6f11-4530-9996-8f65863dc0d4",
+        "object": "text_extrusion_model:96698-bef8460f-6f11-4530-9996-8f65863dc0d4",
+        "objectProperty": "text_extrusion_text",
+        "position": [
+          428,
+          116
+        ]
+      },
+      {
+        "modelName": "script_read_variable_patch_model",
+        "name": "Variables From Script",
+        "identifier": "script_read_variable_patch_model:96508-bef8460f-6f11-4530-9996-8f65863dc0d4",
+        "object": "script_bridging_variables_model:91632-256bfc30-996b-4fac-b639-ecdd426f2d66",
+        "position": [
+          168.89999389648438,
+          23.899999618530273
         ],
-        "templateId": "builtin.toggle"
+        "variables": "script_bridging_variables_model:91632-256bfc30-996b-4fac-b639-ecdd426f2d66"
       }
     ]
   }

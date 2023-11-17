@@ -1,0 +1,45 @@
+{
+  "modelName": "shader_code_asset_material_model",
+  "name": "emoji",
+  "identifier": "shader_code_asset_material_model:94106-bef8460f-6f11-4530-9996-8f65863dc0d4",
+  "alphaTestEnabled": false,
+  "alphaTestThreshold": 0,
+  "blendMode": "alpha",
+  "cullMode": "back",
+  "diffuseFactor": "0xffffffff",
+  "diffuseTextureTransform": {
+    "offsetU": 0,
+    "offsetV": 0,
+    "rotation": 0,
+    "scaleU": 1,
+    "scaleV": 1
+  },
+  "doubleSided": false,
+  "fragmentOutputCount": 1,
+  "importIssues": {},
+  "isDiffuseTextureIdentifierEnabled": false,
+  "readDepth": true,
+  "shader": "shader_interface_model:92371-bef8460f-6f11-4530-9996-8f65863dc0d4",
+  "transparency": 1,
+  "writeDepth": true,
+  "writesToColorBufferAlpha": true,
+  "writesToColorBufferBlue": true,
+  "writesToColorBufferGreen": true,
+  "writesToColorBufferRed": true,
+  "children": [
+    {
+      "modelName": "composed_material_parameters_model",
+      "identifier": "composed_material_parameters_model:94108-bef8460f-6f11-4530-9996-8f65863dc0d4",
+      "children": [
+        {
+          "modelName": "composed_material_parameter_model",
+          "name": "tex0",
+          "identifier": "composed_material_parameter_model:94110-bef8460f-6f11-4530-9996-8f65863dc0d4",
+          "isTextureIdentifierEnabled": false,
+          "textureIdentifier": "texture:93345-5dc37b3f-9e5d-45fa-8319-0feb7a626a27",
+          "type": "texture"
+        }
+      ]
+    }
+  ]
+}

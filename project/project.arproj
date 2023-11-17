@@ -81,7 +81,10 @@
           "sectionFileLocation": "materials/material0.material"
         },
         {
-          "sectionFileLocation": "materials/emoji-2.material"
+          "sectionFileLocation": "materials/emoji.material"
+        },
+        {
+          "sectionFileLocation": "materials/material1.material"
         }
       ]
     },
@@ -112,38 +115,11 @@
           "modelName": "script_bridging_variables_model",
           "identifier": "script_bridging_variables_model:91632-256bfc30-996b-4fac-b639-ecdd426f2d66",
           "scriptVariables": [
-            "script_patch_read_variable_model:92353-256bfc30-996b-4fac-b639-ecdd426f2d66",
-            "script_patch_read_variable_model:92355-256bfc30-996b-4fac-b639-ecdd426f2d66",
-            "script_patch_read_variable_model:92357-256bfc30-996b-4fac-b639-ecdd426f2d66",
-            "script_patch_read_variable_model:93379-5dc37b3f-9e5d-45fa-8319-0feb7a626a27",
+            "script_patch_read_variable_model:96506-bef8460f-6f11-4530-9996-8f65863dc0d4",
             "script_patch_write_variable_model:102421-c035f80c-754f-4a3a-a4e8-45073f42fb5f",
             "script_patch_write_variable_model:95287-5dc37b3f-9e5d-45fa-8319-0feb7a626a27"
           ],
           "children": [
-            {
-              "modelName": "script_patch_read_variable_model",
-              "name": "smile",
-              "identifier": "script_patch_read_variable_model:92353-256bfc30-996b-4fac-b639-ecdd426f2d66",
-              "type": "boolean"
-            },
-            {
-              "modelName": "script_patch_read_variable_model",
-              "name": "kiss",
-              "identifier": "script_patch_read_variable_model:92355-256bfc30-996b-4fac-b639-ecdd426f2d66",
-              "type": "boolean"
-            },
-            {
-              "modelName": "script_patch_read_variable_model",
-              "name": "surprised",
-              "identifier": "script_patch_read_variable_model:92357-256bfc30-996b-4fac-b639-ecdd426f2d66",
-              "type": "boolean"
-            },
-            {
-              "modelName": "script_patch_read_variable_model",
-              "name": "frown",
-              "identifier": "script_patch_read_variable_model:93379-5dc37b3f-9e5d-45fa-8319-0feb7a626a27",
-              "type": "boolean"
-            },
             {
               "modelName": "script_patch_write_variable_model",
               "name": "observedTimeoutMilliseconds",
@@ -153,6 +129,12 @@
               "modelName": "script_patch_write_variable_model",
               "name": "scoredTimeoutMilliseconds",
               "identifier": "script_patch_write_variable_model:102421-c035f80c-754f-4a3a-a4e8-45073f42fb5f"
+            },
+            {
+              "modelName": "script_patch_read_variable_model",
+              "name": "currentState",
+              "identifier": "script_patch_read_variable_model:96506-bef8460f-6f11-4530-9996-8f65863dc0d4",
+              "type": "string"
             }
           ]
         },
@@ -160,7 +142,7 @@
           "modelName": "script",
           "name": "script0",
           "identifier": "script:101397-c035f80c-754f-4a3a-a4e8-45073f42fb5f",
-          "assetDataHash": "8964c7004fca649d83f9cbc5b5eeae4a",
+          "assetDataHash": "bd57469111b94ce38ec2eb2c7ee1abd6",
           "assetLocator": "scripts/script.ts",
           "isExternalAsset": true
         }
@@ -302,7 +284,7 @@
       "effectUsesDepthData": false,
       "effectUsesDepthShaderRead": false,
       "effectUsesDeviceMotion": false,
-      "effectUsesDiagnosticsScriptingModule": false,
+      "effectUsesDiagnosticsScriptingModule": true,
       "effectUsesDirectionalLightEstimation": false,
       "effectUsesDspAudioAnalyzer": false,
       "effectUsesDspBitCrusher": false,
@@ -346,7 +328,7 @@
       "effectUsesFacialGestureRecognition": true,
       "effectUsesFieldOfView": false,
       "effectUsesFingerTracking": false,
-      "effectUsesFonts": false,
+      "effectUsesFonts": true,
       "effectUsesFormFactor": false,
       "effectUsesFrameBrightness": false,
       "effectUsesGalleryPicker": false,
@@ -475,7 +457,7 @@
       "effectUsesTargetRecognition": false,
       "effectUsesTextAssets": false,
       "effectUsesTextCaptions": false,
-      "effectUsesTextExtrusion": false,
+      "effectUsesTextExtrusion": true,
       "effectUsesTexturesScriptingModule": true,
       "effectUsesTimeScriptingModule": false,
       "effectUsesToasterTracking": false,
@@ -592,25 +574,23 @@
           "modelName": "shader_code_asset_model",
           "name": "shaderCodeAsset",
           "identifier": "shader_code_asset_model:92369-bef8460f-6f11-4530-9996-8f65863dc0d4",
-          "assetDataHash": "3ca892d55a5219513886cdf589e418d6",
+          "assetDataHash": "3d6c7925c46d2e4c99de5b2adac11277",
           "assetLocator": "shaders/shaderCodeAsset.sca",
           "builtinDeps": [
             "texture2d",
-            "textureEnv",
-            "gradients",
-            "sdf"
+            "textureEnv"
           ],
           "externalDeps": [],
           "isExternalAsset": true,
-          "moduleName": "sparkShaderCode13754011628298751858",
-          "wordsHash": 6581595779662298948,
+          "moduleName": "sparkShaderCode903428050732044256",
+          "wordsHash": -6620109764629688393,
           "children": [
             {
               "modelName": "shader_interface_model",
               "identifier": "shader_interface_model:92371-bef8460f-6f11-4530-9996-8f65863dc0d4",
-              "description": "==============================================================================\nWelcome to shader authoring in Meta Spark Studio!\n==============================================================================\nEntry point of the shader code asset",
+              "description": "",
               "functionName": "user::main",
-              "linkageName": "sparkShaderCode13754011628298751858",
+              "linkageName": "sparkShaderCode903428050732044256",
               "children": [
                 {
                   "modelName": "shaderInputPorts",
@@ -618,53 +598,14 @@
                   "children": [
                     {
                       "modelName": "shader_input_port_model",
-                      "name": "color1",
-                      "identifier": "shader_input_port_model:92377-bef8460f-6f11-4530-9996-8f65863dc0d4",
-                      "defaultValue": {
-                        "type": 3,
-                        "value": [
-                          0,
-                          1,
-                          1,
-                          1
-                        ]
-                      },
-                      "description": "",
-                      "valueType": "color"
-                    },
-                    {
-                      "modelName": "shader_input_port_model",
-                      "name": "color2",
-                      "identifier": "shader_input_port_model:92379-bef8460f-6f11-4530-9996-8f65863dc0d4",
-                      "defaultValue": {
-                        "type": 3,
-                        "value": [
-                          0,
-                          0,
-                          0.7529411911964417,
-                          1
-                        ]
-                      },
-                      "description": "",
-                      "valueType": "color"
-                    },
-                    {
-                      "modelName": "shader_input_port_model",
-                      "name": "armCount",
-                      "identifier": "shader_input_port_model:92381-bef8460f-6f11-4530-9996-8f65863dc0d4",
+                      "name": "tex0",
+                      "identifier": "shader_input_port_model:92891-bef8460f-6f11-4530-9996-8f65863dc0d4",
                       "defaultValue": {
                         "type": 0,
-                        "value": 5
+                        "value": 0
                       },
                       "description": "",
-                      "maximumValue": {
-                        "type": 0,
-                        "value": 9
-                      },
-                      "minimumValue": {
-                        "type": 0,
-                        "value": 4
-                      }
+                      "valueType": "texture_2d"
                     }
                   ]
                 },
@@ -675,8 +616,8 @@
                     {
                       "modelName": "shader_output_port_model",
                       "name": "return",
-                      "identifier": "shader_output_port_model:92383-bef8460f-6f11-4530-9996-8f65863dc0d4",
-                      "description": "color",
+                      "identifier": "shader_output_port_model:92893-bef8460f-6f11-4530-9996-8f65863dc0d4",
+                      "description": "",
                       "valueType": "vec4"
                     }
                   ]
@@ -684,6 +625,20 @@
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      "modelName": "fonts",
+      "identifier": "fonts:92809-bef8460f-6f11-4530-9996-8f65863dc0d4",
+      "children": [
+        {
+          "modelName": "local_font_model",
+          "name": "Facebook Sans Bold",
+          "identifier": "local_font_model:96708-bef8460f-6f11-4530-9996-8f65863dc0d4",
+          "assetLocator": "96709-bef8460f-6f11-4530-9996-8f65863dc0d4",
+          "fontIdentity": "com.facebook.editor.fonts.facebooksans-bold",
+          "isExternalAsset": false
         }
       ]
     }
