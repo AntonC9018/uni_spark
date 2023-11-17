@@ -40,7 +40,7 @@ Am setat ca textura la material una din texturile descărcate:
 
 ![](images/texture.png)
 
-Însă lucrează doar cu angry face, alte imagini o băguiesc.
+Însă lucrează doar cu angry face, alte imagini o bug-uiesc.
 
 ![](images/texture-bugged.png)
 
