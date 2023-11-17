@@ -1,0 +1,36 @@
+{
+  "modelName": "texture",
+  "name": "frown",
+  "identifier": "texture:93337-5dc37b3f-9e5d-45fa-8319-0feb7a626a27",
+  "alphaPremultiplicationMode": "should_premultiply",
+  "assetDataHash": "e01404e2946c326471b2e745c14303e7",
+  "assetLocator": "textures/frown.webp",
+  "colorEncoding": "linear",
+  "compressionQuality": "high",
+  "coordMapping": "none",
+  "excludeDuringExport": false,
+  "excludeFromPackage": false,
+  "filter": "bilinear",
+  "hasOfflineMipmaps": false,
+  "height": 480,
+  "importIssues": {},
+  "isExternalAsset": true,
+  "smartTextureTargetSizeLimit": "largest",
+  "targetSize": "largest",
+  "uWrapMode": "clamp",
+  "vWrapMode": "clamp",
+  "width": 480,
+  "children": [
+    {
+      "modelName": "data_texture_metadata_model",
+      "name": "data_texture_metadata_model0",
+      "assetDataHash": "e01404e2946c326471b2e745c14303e7",
+      "colorCount": 22137,
+      "detectedAlphaChannel": "eight_bit_full_range",
+      "detectedOriginalFormat": "webp",
+      "entropyOfDistribution": 11.005992607378209,
+      "pixelsHigh": 480,
+      "pixelsWide": 480
+    }
+  ]
+}

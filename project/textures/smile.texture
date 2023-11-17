@@ -1,0 +1,36 @@
+{
+  "modelName": "texture",
+  "name": "smile",
+  "identifier": "texture:93345-5dc37b3f-9e5d-45fa-8319-0feb7a626a27",
+  "alphaPremultiplicationMode": "should_premultiply",
+  "assetDataHash": "9267054562d8884fd62e9dfe969dc08c",
+  "assetLocator": "textures/smile.webp",
+  "colorEncoding": "linear",
+  "compressionQuality": "high",
+  "coordMapping": "none",
+  "excludeDuringExport": false,
+  "excludeFromPackage": false,
+  "filter": "bilinear",
+  "hasOfflineMipmaps": false,
+  "height": 480,
+  "importIssues": {},
+  "isExternalAsset": true,
+  "smartTextureTargetSizeLimit": "largest",
+  "targetSize": "largest",
+  "uWrapMode": "clamp",
+  "vWrapMode": "clamp",
+  "width": 480,
+  "children": [
+    {
+      "modelName": "data_texture_metadata_model",
+      "name": "data_texture_metadata_model0",
+      "assetDataHash": "9267054562d8884fd62e9dfe969dc08c",
+      "colorCount": 25180,
+      "detectedAlphaChannel": "eight_bit_full_range",
+      "detectedOriginalFormat": "webp",
+      "entropyOfDistribution": 11.14163762203607,
+      "pixelsHigh": 480,
+      "pixelsWide": 480
+    }
+  ]
+}

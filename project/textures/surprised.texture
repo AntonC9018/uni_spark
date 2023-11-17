@@ -1,0 +1,36 @@
+{
+  "modelName": "texture",
+  "name": "surprised",
+  "identifier": "texture:93349-5dc37b3f-9e5d-45fa-8319-0feb7a626a27",
+  "alphaPremultiplicationMode": "should_premultiply",
+  "assetDataHash": "f447ed398c0ee128cbd9bf8959b2ebb4",
+  "assetLocator": "textures/surprised.webp",
+  "colorEncoding": "linear",
+  "compressionQuality": "high",
+  "coordMapping": "none",
+  "excludeDuringExport": false,
+  "excludeFromPackage": false,
+  "filter": "bilinear",
+  "hasOfflineMipmaps": false,
+  "height": 480,
+  "importIssues": {},
+  "isExternalAsset": true,
+  "smartTextureTargetSizeLimit": "largest",
+  "targetSize": "largest",
+  "uWrapMode": "clamp",
+  "vWrapMode": "clamp",
+  "width": 480,
+  "children": [
+    {
+      "modelName": "data_texture_metadata_model",
+      "name": "data_texture_metadata_model0",
+      "assetDataHash": "f447ed398c0ee128cbd9bf8959b2ebb4",
+      "colorCount": 21509,
+      "detectedAlphaChannel": "eight_bit_full_range",
+      "detectedOriginalFormat": "webp",
+      "entropyOfDistribution": 10.863462474487612,
+      "pixelsHigh": 480,
+      "pixelsWide": 480
+    }
+  ]
+}

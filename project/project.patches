@@ -1,0 +1,83 @@
+{
+  "id": "91594256bfc30996b4facb639ecdd426f2d66",
+  "revision": "91595256bfc30996b4facb639ecdd426f2d66",
+  "version": {
+    "dev": 0,
+    "patch": 0,
+    "prod": 171
+  },
+  "creatorIdentifier": "com.facebook.arstudio.skylight",
+  "creatorPlatform": "windows",
+  "creatorFileVersion": {
+    "dev": 0,
+    "patch": 0,
+    "prod": 171
+  },
+  "visual_programming": {
+    "graphs": [
+      {
+        "modelName": "patch_graph",
+        "identifier": "patch_graph:91686-256bfc30-996b-4fac-b639-ecdd426f2d66",
+        "subpatches": [
+          "consumer_patch_model:102423-c035f80c-754f-4a3a-a4e8-45073f42fb5f",
+          "consumer_patch_model:102425-c035f80c-754f-4a3a-a4e8-45073f42fb5f",
+          "template_patch_model:95339-5dc37b3f-9e5d-45fa-8319-0feb7a626a27"
+        ]
+      }
+    ],
+    "patches": [
+      {
+        "modelName": "consumer_patch_model",
+        "name": "observedTimeoutMilliseconds",
+        "identifier": "consumer_patch_model:102423-c035f80c-754f-4a3a-a4e8-45073f42fb5f",
+        "object": "script_patch_write_variable_model:95287-5dc37b3f-9e5d-45fa-8319-0feb7a626a27",
+        "objectProperty": "script_write_variable",
+        "position": [
+          812.0249999999999,
+          156.39999999999998
+        ],
+        "values": [
+          {
+            "port": "100",
+            "value": {
+              "t": "double",
+              "v": 100
+            }
+          }
+        ],
+        "variantInfo": "float"
+      },
+      {
+        "modelName": "consumer_patch_model",
+        "name": "scoredTimeoutMilliseconds",
+        "identifier": "consumer_patch_model:102425-c035f80c-754f-4a3a-a4e8-45073f42fb5f",
+        "object": "script_patch_write_variable_model:102421-c035f80c-754f-4a3a-a4e8-45073f42fb5f",
+        "objectProperty": "script_write_variable",
+        "position": [
+          740,
+          68
+        ],
+        "values": [
+          {
+            "port": "100",
+            "value": {
+              "t": "double",
+              "v": 1000
+            }
+          }
+        ],
+        "variantInfo": "float"
+      },
+      {
+        "modelName": "template_patch_model",
+        "name": "Switch",
+        "identifier": "template_patch_model:95339-5dc37b3f-9e5d-45fa-8319-0feb7a626a27",
+        "position": [
+          956,
+          -100
+        ],
+        "templateId": "builtin.toggle"
+      }
+    ]
+  }
+}
