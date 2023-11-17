@@ -138,7 +138,8 @@ class Emojis<T>
             else
             {
               stateSetTimeout = setTimeout(() => {
-                // refresh the current state
+                stateSetTimeout = null;
+
                 let currentRandomKey = currentState.signal.pinLastValue();
                 let newRandomKey;
                 do
@@ -148,8 +149,6 @@ class Emojis<T>
                 }
                 while (currentRandomKey == newRandomKey);
                 currentState.set(newRandomKey);
-
-                stateSetTimeout = null;
               }, scoredTimeoutMilliseconds.pinLastValue());
             }
           });

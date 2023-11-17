@@ -36,7 +36,7 @@ După ce am creat un material, și am adăugat materialul acesta la plan:
 
 ![](images/plane-material.png)
 
-Am setat ca textura la material un din texturile descărcate:
+Am setat ca textura la material una din texturile descărcate:
 
 ![](images/texture.png)
 
@@ -72,7 +72,7 @@ Acesta lucrează cum vrem:
 ![](images/shader_new.png)
 
 Vedem încă problema că meta spark nu crează automat mipmap-uri
-(sau este cauzat de altceva? nu-s nu crează automat mipmap-uri),
+(sau este cauzat de altceva?),
 de aceea textura apare pixelată.
 Nu vreau să caut cum să fac asta.
 
@@ -81,7 +81,7 @@ Nu vreau să caut cum să fac asta.
 
 Asta se poate face ori prin patch-uri, or prin cod, 
 folosind modulul `FaceGestures` în cod.
-După ce m-am jucat și m-am bătut capul cu patch-uri,
+După ce m-am jucat și mi-am bătut capul cu patch-uri,
 am decis să folosesc totuși TypeScript-ul.
 Patch-urile vor avea și probleme cu timing-uri în viitor,
 care se rezolvă mult mai ușor prin cod.
@@ -259,7 +259,7 @@ Nu știu dacă are bug-uri sau nu, execuția nu ajunge acolo din cauza erorii, m
 - Fiecare dată când se schimbă ținta curent (cheia emoji-ului),
   ceea ce se întâmplă când se resetează ținta după un succes,
   resetăm textura din imagine să arată imaginea care corespunde țintei curente
-  (emoji-ul respectiv).
+  (emoji respectiv).
 
 - Inițializăm un event handler care va fi invocat când ținta se schimbă.
   Acesta resetează din nou ținta la un număr aleator nou, dacă
@@ -298,7 +298,8 @@ Nu știu dacă are bug-uri sau nu, execuția nu ajunge acolo din cauza erorii, m
           else
           {
             stateSetTimeout = setTimeout(() => {
-              // refresh the current state
+              stateSetTimeout = null;
+
               let currentRandomKey = currentState.signal.pinLastValue();
               let newRandomKey;
               do
@@ -308,8 +309,6 @@ Nu știu dacă are bug-uri sau nu, execuția nu ajunge acolo din cauza erorii, m
               }
               while (currentRandomKey == newRandomKey);
               currentState.set(newRandomKey);
-
-              stateSetTimeout = null;
             }, scoredTimeoutMilliseconds.pinLastValue());
           }
         });
