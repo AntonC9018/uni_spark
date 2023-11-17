@@ -34,7 +34,7 @@ De aceea am creat un plan, care am să-l folosesc pentru a desena imaginea:
 
 După ce am creat un material, și am adăugat materialul acesta la plan:
 
-![](images/plane_material.png)
+![](images/plane-material.png)
 
 Am setat ca textura la material un din texturile descărcate:
 
