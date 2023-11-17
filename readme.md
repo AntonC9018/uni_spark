@@ -315,3 +315,8 @@ Nu știu dacă are bug-uri sau nu, execuția nu ajunge acolo din cauza erorii, m
     });
 }
 ```
+
+Putem să mai avansăm această logică, punând codul în callback,
+înainte de a reseta starea.
+Putem adăuga de ex. un mesaj de succes, sau un efect vizual,
+însă nu fac asta.
