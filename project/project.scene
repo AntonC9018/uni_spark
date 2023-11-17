@@ -217,7 +217,7 @@
                   "horizontalSpacing": 0,
                   "isMaterialIdentifierEnabled": true,
                   "layerIdentifier": "layer0",
-                  "materialIdentifier": "defaultMaterial:92661-5dc37b3f-9e5d-45fa-8319-0feb7a626a27",
+                  "materialIdentifier": "shader_code_asset_material_model:92385-bef8460f-6f11-4530-9996-8f65863dc0d4",
                   "outputVisibility": "preview|capture",
                   "physicsEnabled": false,
                   "receiveShadow": false,

@@ -5,6 +5,7 @@ import Patches from 'Patches';
 import Materials from 'Materials';
 import Textures from 'Textures';
 import Reactive from 'Reactive';
+import Diagnostics from 'Diagnostics';
 import { randomInt } from 'crypto';
 
 
@@ -27,7 +28,6 @@ class Emojis<T>
     kiss: FaceGestures.isKissing(face),
     frown: FaceGestures.hasEyebrowsFrowned(face),
   };
-
   const stateKeys = Object.keys(observedStateSignals);
 
   let textures: Emojis<TextureBase>;
@@ -61,10 +61,6 @@ class Emojis<T>
   const observedTimeoutMilliseconds : ScalarSignal = 
     await Patches.outputs.getScalar("observedTimeoutMilliseconds");
 
-  const scoredTimeoutMilliseconds : ScalarSignal =
-    await Patches.outputs.getScalar("scoredTimeoutMilliseconds"); 
-
-
   const stateSignals = new Emojis<BoolSignalSource>();
   for (let key of stateKeys)
   {
@@ -84,8 +80,8 @@ class Emojis<T>
     let timeout : NodeJS.Timeout = null;
     signal
       .monitor()
-      .subscribe(async event => {
-        if (timeout)
+      .subscribe(event => {
+        if (timeout != null)
         {
           clearTimeout(timeout);
           timeout = null;
@@ -93,6 +89,7 @@ class Emojis<T>
         }
         timeout = setTimeout(() => {
           stateSignals[copy].set(event.newValue);
+          timeout = null;
         }, observedTimeoutMilliseconds.pinLastValue());
       });
   }
@@ -103,6 +100,12 @@ class Emojis<T>
     const randomKey = stateKeys[randomKeyIndex];
     currentState.set(randomKey);
   }
+
+  await Patches.inputs.setString("currentState", currentState.signal);
+
+  const scoredTimeoutMilliseconds : ScalarSignal =
+    await Patches.outputs.getScalar("scoredTimeoutMilliseconds"); 
+
   {
     let latestSubscription : Subscription = null;
     let stateSetTimeout : NodeJS.Timeout = null;
@@ -111,7 +114,7 @@ class Emojis<T>
       .monitor({ fireOnInitialValue: true })
       .subscribe(async event => {
         const texture = textures[event.newValue];
-        emojiMaterial.setTextureSlot("diffuseTexture", texture.signal);
+        emojiMaterial.setTextureSlot("tex0", texture.signal);
 
         if (latestSubscription != null)
         {
@@ -146,8 +149,5 @@ class Emojis<T>
             }
           });
       });
-
   }
-
-  
 })();

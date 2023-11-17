@@ -26,7 +26,8 @@
       "categoriesOrder": [
         "materials",
         "textures",
-        "scripts"
+        "scripts",
+        "shaders"
       ]
     }
   ],
@@ -80,7 +81,7 @@
           "sectionFileLocation": "materials/material0.material"
         },
         {
-          "sectionFileLocation": "materials/emoji.material"
+          "sectionFileLocation": "materials/emoji-2.material"
         }
       ]
     },
@@ -286,7 +287,7 @@
       "effectUsesCameraShare": false,
       "effectUsesComponentEvaluation": true,
       "effectUsesComposedLocally": false,
-      "effectUsesComposedMaterial": false,
+      "effectUsesComposedMaterial": true,
       "effectUsesControllers": false,
       "effectUsesCustomEngineSDK": false,
       "effectUsesCustomFonts": false,
@@ -458,7 +459,7 @@
       "effectUsesScriptingDynamicInstantiation": false,
       "effectUsesSegmentation": false,
       "effectUsesSegmentationType": false,
-      "effectUsesShaderCode": false,
+      "effectUsesShaderCode": true,
       "effectUsesShaderPicking": false,
       "effectUsesShadows": false,
       "effectUsesSkinSegmentation": false,
@@ -582,6 +583,109 @@
     {
       "modelName": "videos_model",
       "identifier": "videos_model:91807-256bfc30-996b-4fac-b639-ecdd426f2d66"
+    },
+    {
+      "modelName": "shaders",
+      "identifier": "shaders:91726-bef8460f-6f11-4530-9996-8f65863dc0d4",
+      "children": [
+        {
+          "modelName": "shader_code_asset_model",
+          "name": "shaderCodeAsset",
+          "identifier": "shader_code_asset_model:92369-bef8460f-6f11-4530-9996-8f65863dc0d4",
+          "assetDataHash": "3ca892d55a5219513886cdf589e418d6",
+          "assetLocator": "shaders/shaderCodeAsset.sca",
+          "builtinDeps": [
+            "texture2d",
+            "textureEnv",
+            "gradients",
+            "sdf"
+          ],
+          "externalDeps": [],
+          "isExternalAsset": true,
+          "moduleName": "sparkShaderCode13754011628298751858",
+          "wordsHash": 6581595779662298948,
+          "children": [
+            {
+              "modelName": "shader_interface_model",
+              "identifier": "shader_interface_model:92371-bef8460f-6f11-4530-9996-8f65863dc0d4",
+              "description": "==============================================================================\nWelcome to shader authoring in Meta Spark Studio!\n==============================================================================\nEntry point of the shader code asset",
+              "functionName": "user::main",
+              "linkageName": "sparkShaderCode13754011628298751858",
+              "children": [
+                {
+                  "modelName": "shaderInputPorts",
+                  "identifier": "shaderInputPorts:92373-bef8460f-6f11-4530-9996-8f65863dc0d4",
+                  "children": [
+                    {
+                      "modelName": "shader_input_port_model",
+                      "name": "color1",
+                      "identifier": "shader_input_port_model:92377-bef8460f-6f11-4530-9996-8f65863dc0d4",
+                      "defaultValue": {
+                        "type": 3,
+                        "value": [
+                          0,
+                          1,
+                          1,
+                          1
+                        ]
+                      },
+                      "description": "",
+                      "valueType": "color"
+                    },
+                    {
+                      "modelName": "shader_input_port_model",
+                      "name": "color2",
+                      "identifier": "shader_input_port_model:92379-bef8460f-6f11-4530-9996-8f65863dc0d4",
+                      "defaultValue": {
+                        "type": 3,
+                        "value": [
+                          0,
+                          0,
+                          0.7529411911964417,
+                          1
+                        ]
+                      },
+                      "description": "",
+                      "valueType": "color"
+                    },
+                    {
+                      "modelName": "shader_input_port_model",
+                      "name": "armCount",
+                      "identifier": "shader_input_port_model:92381-bef8460f-6f11-4530-9996-8f65863dc0d4",
+                      "defaultValue": {
+                        "type": 0,
+                        "value": 5
+                      },
+                      "description": "",
+                      "maximumValue": {
+                        "type": 0,
+                        "value": 9
+                      },
+                      "minimumValue": {
+                        "type": 0,
+                        "value": 4
+                      }
+                    }
+                  ]
+                },
+                {
+                  "modelName": "shaderOutputPorts",
+                  "identifier": "shaderOutputPorts:92375-bef8460f-6f11-4530-9996-8f65863dc0d4",
+                  "children": [
+                    {
+                      "modelName": "shader_output_port_model",
+                      "name": "return",
+                      "identifier": "shader_output_port_model:92383-bef8460f-6f11-4530-9996-8f65863dc0d4",
+                      "description": "color",
+                      "valueType": "vec4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

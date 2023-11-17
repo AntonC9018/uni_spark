@@ -1,0 +1,7 @@
+using namespace std;
+
+vec4 main(Texture2d tex0) {
+  vec2 uv = fragment(getVertexTexCoord());
+  vec4 color = tex0.sample(uv);
+  return color;
+}
