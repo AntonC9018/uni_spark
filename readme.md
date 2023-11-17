@@ -1,4 +1,11 @@
-Ideea proiectului este să avem un emoji pe ecran, și să repetăm emoția acestuia.
+# Proiectul individual la Realitatea Virtuală și Augmentată
+
+*Student:* **Curmanschii Anton, MIA2201**
+
+## Introducere
+
+Ideea mea este să avem un emoji pe ecran, și să repetăm emoția acestuia.
+
 Pentru aceasta avem nevoie de:
 1. Un set de imagini emoji;
 2. O posibilitate de a le arăta pe ecran;
@@ -52,8 +59,9 @@ vec4 main(Texture2d tex0) {
 }
 ```
 
-Editorul s-o băguit iarăși, arătându-mă shader-ul veche.
-Am reîncărcat editorul, și el îmi arăta parametetrile shader-ului veche creat inițial implicit.
+Editorul s-o băguit iarăși, arătându-mi shader-ul veche.
+Am reîncărcat editorul.
+Acum îmi arăta parametrile shader-ului veche creat inițial implicit.
 Trebuia să schimb shader-ul la unul alt, după ce să-l schimb înapoi.
 De amu mi-a arătat uniformul meu `tex0`.
 
@@ -63,7 +71,9 @@ Acesta lucrează cum vrem:
 
 ![](images/shader_new.png)
 
-Vedem încă problema că meta spark nu crează automat mipmap-uri, de aceea textura apare pixelată.
+Vedem încă problema că meta spark nu crează automat mipmap-uri
+(sau este cauzat de altceva? nu-s nu crează automat mipmap-uri),
+de aceea textura apare pixelată.
 Nu vreau să caut cum să fac asta.
 
 
@@ -73,7 +83,7 @@ Asta se poate face ori prin patch-uri, or prin cod,
 folosind modulul `FaceGestures` în cod.
 După ce m-am jucat și m-am bătut capul cu patch-uri,
 am decis să folosesc totuși TypeScript-ul.
-Patch-uri vor avea și probleme cu timing-urile în viitor,
+Patch-urile vor avea și probleme cu timing-uri în viitor,
 care se rezolvă mult mai ușor prin cod.
 
 Am definit un tip pentru toate emoțiile track-uite,
@@ -86,7 +96,8 @@ class Emojis<T>
   surprised: T;
   kiss: T;
   frown: T;
-  [key: string]: T;
+  [key: string]: T; // nu știu cum să fac tipul keyof Emojis<T>
+                    // aproape nu cunosc TypeScript-ul
 }
 ```
 
@@ -109,14 +120,15 @@ const stateKeys = Object.keys(observedStateSignals);
 
 ## 4. Să conectăm aceste aspecte 
 
+
 La început am încercat să folosesc patch-urile,
-dar deja am explicat la ce am ajuns cu timing-urile:
+dar deja am explicat la ce am ajuns cu timing-uri.
 
 - Cu setarea texturilor tot nu este evident cum să fac asta:
   vrem să generăm un număr aleator care să reprezinte fața target curentă,
   însă cum să reprezint asta în patch-uri?
 
-- Cum să generez un număr care nu este egal cu număr curent?
+- Cum să generez un număr care nu este egal cu numărul curent?
 
 - Cum să selectez textura după număr generat?
   Nu am găsit componenta "decoder".
@@ -125,6 +137,8 @@ dar deja am explicat la ce am ajuns cu timing-urile:
   Se așteaptă să duplic toată logică pentru fiecare element nou?
 
 Sunt prea multe întrebări fără răspuns, de aceea fac prin cod.
+
+### Codul esențial
 
 În primul rând culeg toate referințele după nume:
 
@@ -200,6 +214,8 @@ for (var [key, signal] of Object.entries(observedStateSignals))
 }
 ```
 
+### Debugging
+
 Mai am adăugat ceva cod, pentru acum nu importă.
 Scriptul se compilează și se rulează, dar se crășează undeva, zice `Unavailable API`.
 Am încercat să fac debugging cu extensiunea din VS Code, dar nu merge debugging-ul.
@@ -212,4 +228,91 @@ const signal = Reactive.boolSignalSource(key);
 ```
 
 Sincer nu am idei cum să realizez ideea fără această funcție.
-Așa că acum eu sunt în impas, și în plus sunt frustrat de experiență cu aplicația.
+Așa că acum eu sunt în impas, și în plus sunt frustrat de experiență cu aplicația,
+am să mă opresc aici.
+
+### Restul codului
+
+Arăt și restul logicii.
+Vom avea nevoie de o constantă care indică cât timp
+gestul feței să fie activ ca să se socoată:
+
+```ts
+const scoredTimeoutMilliseconds : ScalarSignal =
+  await Patches.outputs.getScalar("scoredTimeoutMilliseconds"); 
+```
+
+Vom mai ține cont de starea curentă, adică emoji selectat la moment.
+
+```ts
+const currentState = Reactive.stringSignalSource("currentState");
+{
+  const randomKeyIndex = randomInt(0, stateKeys.length);
+  const randomKey = stateKeys[randomKeyIndex];
+  currentState.set(randomKey);
+}
+```
+
+Și acum logica principală.
+Nu știu dacă are bug-uri sau nu, execuția nu ajunge acolo din cauza erorii, menționate anterior.
+
+- Fiecare dată când se schimbă ținta curent (cheia emoji-ului),
+  ceea ce se întâmplă când se resetează ținta după un succes,
+  resetăm textura din imagine să arată imaginea care corespunde țintei curente
+  (emoji-ul respectiv).
+
+- Inițializăm un event handler care va fi invocat când ținta se schimbă.
+  Acesta resetează din nou ținta la un număr aleator nou, dacă
+  variabila gestului feței indică gestul țintă pentru o perioadă de timp.
+
+```ts
+{
+  let latestSubscription : Subscription = null;
+  let stateSetTimeout : NodeJS.Timeout = null;
+  currentState
+    .signal
+    .monitor({ fireOnInitialValue: true })
+    .subscribe(async event => {
+      const texture = textures[event.newValue];
+      emojiMaterial.setTextureSlot("tex0", texture.signal);
+
+      if (latestSubscription != null)
+      {
+        latestSubscription.unsubscribe();
+      }
+      if (stateSetTimeout != null)
+      {
+        clearTimeout(stateSetTimeout);
+        stateSetTimeout = null;
+      }
+
+      const signal = stateSignals[event.newValue].signal;
+      latestSubscription = signal
+        .monitor({ fireOnInitialValue: true })
+        .subscribe(event => {
+          if (event.newValue == false)
+          {
+            if (stateSetTimeout != null)
+              clearTimeout(stateSetTimeout);
+          }
+          else
+          {
+            stateSetTimeout = setTimeout(() => {
+              // refresh the current state
+              let currentRandomKey = currentState.signal.pinLastValue();
+              let newRandomKey;
+              do
+              {
+                const randomKeyIndex = randomInt(0, stateKeys.length);
+                newRandomKey = stateKeys[randomKeyIndex];
+              }
+              while (currentRandomKey == newRandomKey);
+              currentState.set(newRandomKey);
+
+              stateSetTimeout = null;
+            }, scoredTimeoutMilliseconds.pinLastValue());
+          }
+        });
+    });
+}
+```

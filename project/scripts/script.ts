@@ -120,6 +120,11 @@ class Emojis<T>
         {
           latestSubscription.unsubscribe();
         }
+        if (stateSetTimeout != null)
+        {
+          clearTimeout(stateSetTimeout);
+          stateSetTimeout = null;
+        }
 
         const signal = stateSignals[event.newValue].signal;
         latestSubscription = signal
